@@ -53,6 +53,7 @@ def create_and_print_shipment():
         print(f"Processing shipment for user {user_name} ({user_email})")
 
         # Replace & in receipt_name
+        shipper_phone_number = shipper_phone_number.replaceAll("[^\\d+]", "");
         receipt_name = receipt_name.replace('&', 'et')
 
         # Validate that important fields are not missing
