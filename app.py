@@ -233,6 +233,9 @@ def send_email_route():
     else:
         return "Something went wrong..."
 
+@app.route('/')
+def index():
+    return "Welcome to the TNT Shipment Service"
 
 if __name__ == '__main__':
     app.run(debug=True)
