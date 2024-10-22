@@ -2,6 +2,7 @@ import base64
 import tempfile
 import os
 import requests
+import re
 from flask import Flask, request, jsonify
 from lxml import etree
 from datetime import date, datetime
@@ -53,7 +54,7 @@ def create_and_print_shipment():
         print(f"Processing shipment for user {user_name} ({user_email})")
 
         # Replace & in receipt_name
-        shipper_phone_number = shipper_phone_number.replaceAll("[^\\d+]", "");
+        shipper_phone_number = re.sub(r'[^0-9+]', '', shipper_phone_number)
         receipt_name = receipt_name.replace('&', 'et')
 
         # Validate that important fields are not missing
