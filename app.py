@@ -6,6 +6,9 @@ import re
 from flask import Flask, request, jsonify
 from lxml import etree
 from datetime import date, datetime
+from zoho_crm_contact_address_update import verify_address_with_google, update_contact_in_zoho
+from createAndPrintShipment import make_pickup_request, build_soap_request_expedition_from_client_to_dentalhitec, build_soap_request_expedition_from_dentalhitec_to_client, invoke_soap_request, extract_base64_zpl_from_response, convert_base64_to_zpl, send_file_to_printer
+from send_email import send_email, get_account_id
 
 app = Flask(__name__)
 
