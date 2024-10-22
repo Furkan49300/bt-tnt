@@ -21,7 +21,7 @@ def normalize_string(value):
         value = value.replace('œ', 'oe').replace('é', 'e').replace('ê', 'e').replace('è', 'e').replace('ô', 'o').replace('à', 'a')
         value = value.replace('&', 'et')  # Remplacer & par "et"
         value = re.sub(r'[^\w\s\-]', '', value)  # Supprimer tout autre caractère spécial sauf les lettres, chiffres, espaces et tirets
-        return value.strip()  # Supprimer les espaces en début et fin
+        return value.strip()  # Supprimer les espaces en début et fing
     return value
 
 # Fonction pour formater le numéro de téléphone
